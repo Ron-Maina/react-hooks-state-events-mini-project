@@ -1,9 +1,9 @@
 import React from "react";
 
-function Task() {
+function Task(props) {
   return (
-    <div className="task">
-      <div className="label">CATEGORY HERE</div>
+    <div className="task" key={index}>
+      <div className="label">{props.tasks.category}</div>
       <div className="text">TEXT HERE</div>
       <button className="delete">X</button>
     </div>
