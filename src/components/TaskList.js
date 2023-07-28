@@ -1,22 +1,16 @@
 import React from "react";
+import Task from "./Task";
 
+function TaskList({ tasks, onTaskDelete }) {
+  const taskList = tasks.map((task)=>(
+    <Task key={task.text} text={task.text} category={task.category} onTaskDelete={onTaskDelete} />
+  ))
 
-// function TaskList(props) {
-  
-//     return (
-//       <div className="tasks">
-//         <h2>{props.task}</h2>
-//       </div>
-//     );
-// }
-
-//Using destructuring
-function TaskList({task}) {
-  
-    return (
-      <div className="tasks">
-        <h2>{task}</h2>
-      </div>
-    );
+  return (
+    <div className="tasks">
+      {taskList}
+    </div>
+  );
 }
+
 export default TaskList;
